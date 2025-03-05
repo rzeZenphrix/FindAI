@@ -42,3 +42,6 @@ async function initializeDatabase() {
 
 // ✅ Export the function instead of calling it immediately
 module.exports = { initializeDatabase };
+
+// Call the function to initialize the database
+initializeDatabase();

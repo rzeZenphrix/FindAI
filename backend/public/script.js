@@ -2,6 +2,14 @@ const API_URL = 'http://localhost:5000/api';
 
 // Initialize tools display
 document.addEventListener('DOMContentLoaded', async () => {
+    document.getElementById('toolURL').addEventListener('input', function() {
+        if (!isValidUrl(this.value)) {
+            this.setCustomValidity('Please enter a valid URL');
+        }
+    });
+
+    document.getElementById('crawlBtn').addEventListener('click', crawlNewTools);
+    document.getElementById('addSelectedTools').addEventListener('click', addSelectedTools);
     await fetchTools();  // Wait for tools to be fetched before setting up filters
     setupFilters();
     
