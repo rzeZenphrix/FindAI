@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// ✅ Serve Static Files from `public/`
-app.use(express.static(path.join(__dirname, '../public')));
+// ✅ Serve Static Files from `public/` (Fixed Path)
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ✅ API Routes
 app.use('/api/tools', require('./routes/tools'));
@@ -20,7 +20,7 @@ app.use('/api/agreements', require('./routes/agreements'));
 
 // ✅ Catch-all Route (Serve Frontend)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // ✅ Start Server & Initialize Database

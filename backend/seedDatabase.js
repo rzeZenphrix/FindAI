@@ -1,4 +1,4 @@
-const pool = require('./config/db');
+const pool = require('./config/db'); 
 const AI_TOOLS = require('./data/tools');
 
 async function initializeDatabase() {
@@ -40,4 +40,5 @@ async function initializeDatabase() {
     }
 }
 
-initializeDatabase(); 
+// ✅ Export the function instead of calling it immediately
+module.exports = { initializeDatabase };
