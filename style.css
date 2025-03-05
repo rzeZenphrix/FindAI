@@ -1,0 +1,732 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Width and height */
+::-webkit-scrollbar {
+    width: 10px;  /* Slightly wider for better usability */
+    height: 8px; /* Horizontal scrollbar */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;  /* Light gray background */
+    border-radius: 8px;
+}
+
+/* Handle (scroll thumb) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #007bff, #0056b3);  /* Match site's blue theme */
+    border-radius: 8px;
+    border: 2px solid #f1f1f1;  /* Add border for better contrast */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);  /* Reverse gradient on hover */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f1f1f1;
+}
+
+/* For dark mode */
+.dark-mode ::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #1a75ff, #005ce6);
+    border-color: #333;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #005ce6, #1a75ff);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+.social-icons {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    width: 95%;
+    position: relative;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#searchBtn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+}
+
+.tool-card {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+    width: 100%;
+    box-shadow: none;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.tool-card h2 {
+    margin: 0 0 4px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.tool-card p {
+    color: #666;
+    margin: 0 0 12px 0;
+    font-size: 0.95rem;
+}
+
+.badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.badge.category {
+    background-color: #14161a;
+    color: white;
+}
+
+.badge.pricing {
+    background-color: #f5f5f5;
+    color: #666;
+}
+
+.badge.rating {
+    background-color: #ff3b30;
+    color: white;
+}
+
+.badge.rating::before {
+    content: "★";
+    margin-right: 4px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    color: black;
+    padding: 1rem 2rem;
+}
+
+#darkModeToggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.filters {
+    padding: 10px;
+    background: white;
+    width: 250px;
+    margin: auto;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filters h2, .filters h3 {
+    margin: 10px 0;
+}
+
+#toolList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.tool-card .badge {
+    display: inline-block;
+    background: #4b6cb7;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.tool-card .rating {
+    font-size: 1rem;
+    color: #f39c12;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode .filters, .dark-mode .tool-card {
+    background: #333;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tool-card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Filter styles */
+.filters-container {
+    background: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    flex: 1;
+}
+
+.filter-group h3 {
+    margin: 10px 0 12px 0;
+    font-size: 1rem;
+    color: #1a1a1a;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-checkbox {
+    display: none;
+}
+
+.filter-label {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: white;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-checkbox:checked + .filter-label {
+    background: #1a1a1a;
+    color: white;
+    border-color: #1a1a1a;
+}
+
+/* Add hover effect for tool cards */
+.tool-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Add loading state */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #007bff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.dark-mode .loader {
+    border-color: #fff;
+    border-bottom-color: transparent;
+}
+
+/* Add empty state */
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.no-results img {
+    margin-bottom: 16px;
+}
+
+.no-results p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaeaea;
+}
+
+/* Floating Action Button */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 20px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 96.2%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+    width: 96.2%;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Error state */
+.error-state {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.error-state button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.error-state button:hover {
+    background: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .filters-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .modal-content {
+        margin: 20px;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .tool-card {
+        padding: 15px;
+    }
+
+    .badges {
+        flex-wrap: wrap;
+    }
+
+    .floating-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Dark Mode Improvements */
+.dark-mode .modal-content {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .form-group label {
+    color: #fff;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+    background-color: #444;
+    border-color: #555;
+    color: white;
+}
+
+.dark-mode .filter-label {
+    background: #444;
+    border-color: #555;
+    color: #fff;
+}
+
+.dark-mode .close-btn {
+    color: #fff;
+}
+
+.dark-mode .loading,
+.dark-mode .error-state,
+.dark-mode .no-results {
+    color: #fff;
+}
+
+/* Accessibility & Focus States */
+.tool-card:focus,
+.filter-label:focus-within,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* New Badge */
+.badge.new {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Clear Filters Button */
+.clear-filters {
+    margin-bottom: 15px;
+    padding: 8px 16px;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.dark-mode .clear-filters {
+    border-color: #555;
+    color: white;
+}
+
+.clear-filters:hover {
+    background: #f8f9fa;
+}
+
+.dark-mode .clear-filters:hover {
+    background: #444;
+}
+
+/* Tooltips */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content h6 {
+    color: #666;
+    font-style: italic;
+    margin: 10px 0;
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Dark mode support */
+.dark-mode .modal-content h6 {
+    color: #aaa;
+}
+
+.submission-warning {
+    color: #666;
+    font-style: italic;
+    margin: 15px 0;
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Dark mode support */
+.dark-mode .submission-warning {
+    color: #aaa;
+}
+
+.crawler-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.crawler-btn {
+    background: linear-gradient(45deg, #007bff, #6610f2);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+    transition: transform 0.2s;
+}
+
+.crawler-btn:hover {
+    transform: translateY(-2px);
+}
+
+.crawler-btn i {
+    font-size: 1.2rem;
+}
+
+#crawlerResults {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin: 20px 0;
+}
+
+.crawler-tool-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+.crawler-tool-item:hover {
+    background: #f8f9fa;
+}
+
+.tool-checkbox {
+    margin-right: 15px;
+}
+
+.tool-info {
+    flex: 1;
+}
+
+.tool-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.tool-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.crawler-actions {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.crawler-loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.crawler-loading .loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title>AI Search Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- <h1>AI Search Engine</h1> -->
+        <h2 style="text-align: center;">Search and find popular AIs & Tools</h2>
+        <p style="color: #666; font-style: italic; margin: 10px 0; font-size: 0.8rem;">There are currently over 120+ tools registered on the platform. If there are any not available here, you can add it by clicking the "+" icon.</p>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search AI tools...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <!--<div class="crawler-container">
+            <button id="crawlBtn" class="crawler-btn">
+                <i class="fas fa-spider"></i> Find New AI Tools
+            </button>
+        </div>-->
+
+        <div class="filters-container">
+            <div class="filter-group">
+                <h3>Categories</h3>
+                <div id="categoryFilters" class="filter-options">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+            <!--<br></br>-->
+            <div class="filter-group">
+                <h3>Pricing</h3>
+                <div id="pricingFilters" class="filter-options">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!--<button class="clear-filters" id="clearFilters">
+            Clear All Filters
+        </button>-->
+
+        <div id="toolList">
+            <!-- Tools will be rendered here by JavaScript -->
+        </div>
+    </div>
+
+    <button id="addToolBtn" class="floating-btn">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <div id="submitModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <!--<h2 style="text-align: center;">Add a Tool we didn't know about.</h2>-->
+            <form id="toolSubmitForm">
+                <div class="form-group">
+                    <label for="toolName">Tool Name*</label>
+                    <input type="text" id="toolName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toolCategory">Category*</label>
+                    <select id="toolCategory" required>
+                        <!-- Will be populated by JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toolDescription">Description*</label>
+                    <textarea id="toolDescription" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toolPricing">Pricing*</label>
+                    <select id="toolPricing" required>
+                        <option value="Free">Free</option>
+                        <option value="Paid">Paid</option>
+                        <option value="Freemium">Freemium</option>
+                        <option value="Free & Paid">Free & Paid</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toolURL">Website URL*</label>
+                    <input type="url" id="toolURL" required>
+                </div>
+
+                <h6 class="submission-warning">
+                    *Please ensure that the information you are submitting is correct and not misleading to others. <a href="terms-&-conditions.html"
+                    target="_blank" style="color: #666; margin: 10px 0; font-size: 0.8rem; text-decoration: underline;">Terms</a>
+                </h6>
+
+                <button type="submit" class="submit-btn">Submit Tool</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="crawlerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>New AI Tools Found</h2>
+            <div id="crawlerResults">
+                <!-- Results will be populated here -->
+            </div>
+            <div class="crawler-actions">
+                <button id="addSelectedTools" class="submit-btn">Add Selected Tools</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="terms-&-conditions.html" target="_blank">Terms & Conditions</a>
+        <div class="social-icons">
+            <a href="https://github.com/rzeZenphrix" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/zenphrix" target="_blank"><i class="fab fa-instagram"></i></a>
+            <!--<a href="https://www.linkedin.com/in/emmanuel-okenwa-86a059318/" target="_blank"><i class="fab fa-linkedin"></i></a>-->
+          </div>
+        <p style="color: #666; font-style: italic; margin: 10px 0; font-size: 0.8rem;">Website updated monthly</p>
+        <p>© 2025 AI Search Engine. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
