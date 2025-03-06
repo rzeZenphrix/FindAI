@@ -35,13 +35,8 @@ async function initializeDatabase() {
         console.log('Database initialized successfully');
     } catch (error) {
         console.error('Error initializing database:', error);
-    } finally {
-        pool.end();
     }
 }
 
 // ✅ Export the function instead of calling it immediately
 module.exports = { initializeDatabase };
-
-// Call the function to initialize the database
-initializeDatabase();
